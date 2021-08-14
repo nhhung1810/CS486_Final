@@ -15,6 +15,7 @@ namespace SPV202_CS486_Team11
         public Form1()
         {
             InitializeComponent();
+            Misc.setConnection(Misc.connectBy.Tuan);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,6 +54,11 @@ namespace SPV202_CS486_Team11
         }
 
         private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
