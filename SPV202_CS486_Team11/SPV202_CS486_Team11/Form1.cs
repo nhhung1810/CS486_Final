@@ -41,7 +41,7 @@ namespace SPV202_CS486_Team11
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            new TrioView().ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
