@@ -109,9 +109,24 @@ namespace SPV202_CS486_Team11
             lbl.Location = new Point(0, 0);
             flpRule.Controls.Add(lbl);//about 
         }
+<<<<<<< Updated upstream
         /*public Button addRuleButton(Control control, string text, int x, int y)
         {
             control = new Button()
         }*/
+=======
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // FormRuleMember
+            // 
+            this.ClientSize = new System.Drawing.Size(737, 482);
+            this.Name = "FormRuleMember";
+            this.ResumeLayout(false);
+
+        }
+>>>>>>> Stashed changes
     }
 }
