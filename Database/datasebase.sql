@@ -48,6 +48,30 @@ alter table Singers
 add isOfficial int, check (isOfficial=0 or isOfficial=1)
 go
 
+INSERT INTO Singers(id, Name, isOfficial) VALUES
+	('1', 'Aladin',  '0'),
+	('2', 'Cui Yuefeng', '0'),
+	('3', 'Dai Chen', '0'),
+	('4', 'Dong Pan', '1')
+INSERT INTO Song(id, name) VALUES
+	('1', 'La Gloire a Mes Genoux'),
+	('2', 'Standchen'),
+	('3', 'Moscow Nights'),
+	('4', 'Ache'),
+	('5', 'I, I'),
+	('6', 'Caruso'),
+	('7', 'That Time'),
+	('8', 'Funicul, Funicul'),
+	('9', 'Can,t Help Falling in Love'),
+	('10', 'To Roam About'),
+	('11', 'One Day of the Spring')
+
+
+use master
+go
+drop DATABASE CS486_team11_DB
+
+---/////////////////////////////////////////////////////////////////////////
 
 CREATE OR ALTER PROCEDURE addInterview
 @official int,
@@ -174,21 +198,32 @@ BEGIN CATCH
 END CATCH;
 GO
 
+CREATE OR ALTER PROCEDURE addPerformance
+@singerid int,
+@songid int
 
-INSERT INTO Singers(id, Name, isOfficial) VALUES
-	('1', 'Aladin',  '0'),
-	('2', 'Cui Yuefeng', '0'),
-	('3', 'Dai Chen', '0'),
-	('4', 'Dong Pan', '1')
-INSERT INTO Song(id, name) VALUES
-	('1', 'La Gloire a Mes Genoux'),
-	('2', 'Standchen'),
-	('3', 'Moscow Nights'),
-	('4', 'Ache'),
-	('5', 'I, I'),
-	('6', 'Caruso'),
-	('7', 'That Time'),
-	('8', 'Funicul, Funicul'),
-	('9', 'Can,t Help Falling in Love'),
-	('10', 'To Roam About'),
-	('11', 'One Day of the Spring')
+AS
+BEGIN TRANSACTION
+BEGIN TRY
+	--IF LEGIT INSERT
+	--ELSE THROW
+	IF NOT EXISTS ( SELECT *
+					FROM Singer
+					WHERE id = @singerid )
+		THROW 50000, 'singer not exist', 1;
+
+	IF NOT EXISTS ( SELECT *
+					FROM Song
+					WHERE id = @songid)
+		THROW 50000, 'song not exist', 1;
+
+	INSERT INTO performance (singerid, songid) 
+			VALUES	(@singerid, @songid);
+
+	COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+	ROLLBACK TRANSACTION;
+	THROW;
+END CATCH;
+GO
