@@ -24,7 +24,7 @@ go
 -- Note: Interview chi cho ep3 va cau 3
 create table Interview(
     interviewer int NOT NULL REFERENCES SInger(id),
-    interviewww int not null REFERENCES singer(id),
+    interviewee int not null REFERENCES singer(id),
     score int not null
 )
 
