@@ -43,12 +43,10 @@ namespace SPV202_CS486_Team11
             flpRule.Height = rule.Height + lbl.Height - 20;
             flpRule.Width = this.Size.Width;
             //initRule();
-            return;
-
-            DataSet data = Misc.getData("select Singer.id, Singer.name from Singer where Singer.isOfficial == 1");//select Official
+            DataSet data = Misc.getData("select Singers.id, Singers.name from Singers where Singers.isOfficial = 1");//select Official
             if (data != null && data.Tables.Count > 0)
                 dgvOfficial.DataSource = data.Tables[0];
-            data = Misc.getData("select Singer.id, Singer.name from Singer where Singer.isOfficial == 0");//Select NonOfficial
+            data = Misc.getData("select Singers.id, Singers.name from Singers where Singers.isOfficial = 0");//Select NonOfficial
             if (data != null && data.Tables.Count > 0)
                 dgvNonOfficial.DataSource = data.Tables[0];
         }

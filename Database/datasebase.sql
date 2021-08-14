@@ -345,7 +345,6 @@ BEGIN CATCH
 END CATCH;
 GO
 
-
 -- EXEC addSong 12, Hello, 1
 
 -- Select STRING_AGG(s.name, ',') as singers, Song.name as Song_name from Performance as p

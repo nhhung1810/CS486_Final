@@ -19,7 +19,7 @@ namespace SPV202_CS486_Team11
 
         private void TrioView_Load(object sender, EventArgs e)
         {
-            DataSet data = Misc.getData("Select STRING_AGG(s.name, ',') as singers, Song.name as Song_name from Performance as p join singers as s on s.id = p.singerid join Song on Song.id = p.songid where p.songid in (select songid from performance as p group by p.songid having count(p.singerid) = 3) GROUP by p.songid");
+            DataSet data = Misc.getData("Select STRING_AGG(s.name, ',') as singers, Songs.name as Song_name from Performance as p join singers as s on s.id = p.singerid join Songs on Songs.id = p.songid where p.songid in (select songid from performance as p group by p.songid having count(p.singerid) = 3) GROUP by p.songid, Songs.name");
             if (data == null || data.Tables.Count == 0 || data.Tables[0].Rows.Count == 0)
             {
                 MessageBox.Show("Cannot load data");

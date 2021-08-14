@@ -15,7 +15,7 @@ namespace SPV202_CS486_Team11
         public Form1()
         {
             InitializeComponent();
-            Misc.setConnection(Misc.connectBy.Hung);
+            Misc.setConnection(Misc.connectBy.Tuong);
         }
 
         private void button1_Click(object sender, EventArgs e)
