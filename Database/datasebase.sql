@@ -5,7 +5,7 @@ go
 use CS486_team11_DB
 go
 
-create table Singer(
+create table Singers(
     id int not null PRIMARY KEY,
     name NVARCHAR(100) NOT NULL,
 	isOfficial int CHECK(isOfficial in (1, 0))
@@ -24,25 +24,30 @@ go
 
 -- Note: Interview chi cho ep3 va cau 3
 create table Interview(
-    interviewer int NOT NULL REFERENCES SInger(id),
-    interviewee int not null REFERENCES singer(id),
+    interviewer int NOT NULL REFERENCES Singers(id),
+    interviewee int not null REFERENCES Singers(id),
     score int not null
 )
 
 --
 
+create table official(
+    singerid int not null REFERENCES Singers(id),
+    isOfficial int CHECK(isOfficial in (1, 0))
+)
 
 go
 
 create table performance(
-    singerid int not null REFERENCES singer(id),
+    singerid int not null REFERENCES Singers(id),
     songid int not null REFERENCES song(id)
 )
 
+
+alter table Singers
+add isOfficial int, check (isOfficial=0 or isOfficial=1)
 go
-use master
-go
-drop DATABASE CS486_team11_DB
+
 
 CREATE OR ALTER PROCEDURE addInterview
 @official int,
@@ -169,3 +174,21 @@ BEGIN CATCH
 END CATCH;
 GO
 
+
+INSERT INTO Singers(id, Name, isOfficial) VALUES
+	('1', 'Aladin',  '0'),
+	('2', 'Cui Yuefeng', '0'),
+	('3', 'Dai Chen', '0'),
+	('4', 'Dong Pan', '1')
+INSERT INTO Song(id, name) VALUES
+	('1', 'La Gloire a Mes Genoux'),
+	('2', 'Standchen'),
+	('3', 'Moscow Nights'),
+	('4', 'Ache'),
+	('5', 'I, I'),
+	('6', 'Caruso'),
+	('7', 'That Time'),
+	('8', 'Funicul, Funicul'),
+	('9', 'Can,t Help Falling in Love'),
+	('10', 'To Roam About'),
+	('11', 'One Day of the Spring')
