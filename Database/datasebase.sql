@@ -7,7 +7,7 @@ go
 
 create table Singers(
     id int not null PRIMARY KEY,
-    name NVARCHAR(100) NOT NULL
+    name NVARCHAR(100) NOT NULL,
 )
 
 go
@@ -90,7 +90,7 @@ INSERT INTO Performance(singerid, songid) VALUES
 
 GO
 
-Select * from Performance
+Select * from Performance 
 
 go
 use master
