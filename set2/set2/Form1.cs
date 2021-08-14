@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,18 @@ namespace set2
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = Misc.getConnectionString();
+
+            SqlCommand cmd = new SqlCommand("addSong", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = textID.Text;
+            cmd.Parameters.AddWithValue("@name", SqlDbType.Int).Value = textID.Text;
+            cmd.Parameters.AddWithValue("@number", SqlDbType.Int).Value = textSongID.Text;
         }
     }
 }
