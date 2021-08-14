@@ -37,7 +37,8 @@ namespace SPV202_CS486_Team11
 
         private void GoToOfficial(string id)
         {
-
+            FormPrinciple form = new FormPrinciple(id);
+            form.ShowDialog();
         }
 
         private void GoToReverse(string id)

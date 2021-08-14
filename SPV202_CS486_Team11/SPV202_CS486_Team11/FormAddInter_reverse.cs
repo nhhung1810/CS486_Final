@@ -14,9 +14,10 @@ namespace SPV202_CS486_Team11
     public partial class FormEP03AddPair : Form
     {
         string revereseID = "";
-        public FormEP03AddPair()
+        public FormEP03AddPair(string ID)
         {
             InitializeComponent();
+            revereseID = ID;
         }
 
         private void FormEP03AddPair_Load(object sender, EventArgs e)

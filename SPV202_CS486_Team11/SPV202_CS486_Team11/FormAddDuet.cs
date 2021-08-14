@@ -15,9 +15,10 @@ namespace SPV202_CS486_Team11
     public partial class FormAddDuet : Form
     {
         string officialID = "";
-        public FormAddDuet()
+        public FormAddDuet( string ID)
         {
             InitializeComponent();
+            officialID = ID;
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
@@ -42,6 +43,11 @@ namespace SPV202_CS486_Team11
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
+        }
+
+        private void FormAddDuet_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
