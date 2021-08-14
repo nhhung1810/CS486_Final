@@ -44,11 +44,11 @@ namespace SPV202_CS486_Team11
             this.dgvOfficial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvOfficial.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvOfficial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOfficial.Location = new System.Drawing.Point(0, 290);
+            this.dgvOfficial.Location = new System.Drawing.Point(0, 353);
             this.dgvOfficial.Name = "dgvOfficial";
             this.dgvOfficial.RowHeadersWidth = 62;
             this.dgvOfficial.RowTemplate.Height = 28;
-            this.dgvOfficial.Size = new System.Drawing.Size(500, 383);
+            this.dgvOfficial.Size = new System.Drawing.Size(500, 634);
             this.dgvOfficial.TabIndex = 1;
             // 
             // dgvNonOfficial
@@ -56,11 +56,11 @@ namespace SPV202_CS486_Team11
             this.dgvNonOfficial.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvNonOfficial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvNonOfficial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNonOfficial.Location = new System.Drawing.Point(510, 290);
+            this.dgvNonOfficial.Location = new System.Drawing.Point(510, 353);
             this.dgvNonOfficial.Name = "dgvNonOfficial";
             this.dgvNonOfficial.RowHeadersWidth = 62;
             this.dgvNonOfficial.RowTemplate.Height = 28;
-            this.dgvNonOfficial.Size = new System.Drawing.Size(531, 383);
+            this.dgvNonOfficial.Size = new System.Drawing.Size(531, 634);
             this.dgvNonOfficial.TabIndex = 2;
             // 
             // flpRule
@@ -68,14 +68,14 @@ namespace SPV202_CS486_Team11
             this.flpRule.Dock = System.Windows.Forms.DockStyle.Top;
             this.flpRule.Location = new System.Drawing.Point(0, 0);
             this.flpRule.Name = "flpRule";
-            this.flpRule.Size = new System.Drawing.Size(1041, 242);
+            this.flpRule.Size = new System.Drawing.Size(1031, 286);
             this.flpRule.TabIndex = 0;
             // 
             // lblOfficial
             // 
             this.lblOfficial.AutoSize = true;
             this.lblOfficial.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOfficial.Location = new System.Drawing.Point(-5, 245);
+            this.lblOfficial.Location = new System.Drawing.Point(-5, 323);
             this.lblOfficial.Name = "lblOfficial";
             this.lblOfficial.Size = new System.Drawing.Size(113, 27);
             this.lblOfficial.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace SPV202_CS486_Team11
             // 
             this.lblNonOfficial.AutoSize = true;
             this.lblNonOfficial.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNonOfficial.Location = new System.Drawing.Point(505, 245);
+            this.lblNonOfficial.Location = new System.Drawing.Point(505, 323);
             this.lblNonOfficial.Name = "lblNonOfficial";
             this.lblNonOfficial.Size = new System.Drawing.Size(123, 27);
             this.lblNonOfficial.TabIndex = 4;
@@ -95,7 +95,7 @@ namespace SPV202_CS486_Team11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 673);
+            this.ClientSize = new System.Drawing.Size(1031, 999);
             this.ControlBox = false;
             this.Controls.Add(this.lblOfficial);
             this.Controls.Add(this.lblNonOfficial);
@@ -104,7 +104,8 @@ namespace SPV202_CS486_Team11
             this.Controls.Add(this.flpRule);
             this.Location = new System.Drawing.Point(100, 0);
             this.Name = "FormRuleMember";
-            this.Text = "Introduction Rule And Member - Super Vocal";
+            this.Text = "                                                                  Introduction Ru" +
+    "le And Member - Super Vocal";
             this.Load += new System.EventHandler(this.FormRuleMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfficial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNonOfficial)).EndInit();
