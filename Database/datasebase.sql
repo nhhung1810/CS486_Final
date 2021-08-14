@@ -134,3 +134,38 @@ BEGIN CATCH
 	THROW;
 END CATCH;
 GO
+
+CREATE OR ALTER PROCEDURE updateInterviewScore
+@official int,
+@reserve int,
+@score int
+
+AS
+BEGIN TRANSACTION
+BEGIN TRY
+	--IF LEGIT INSERT
+	--ELSE THROW
+
+	IF NOT EXISTS ( SELECT *
+					FROM Singer
+					WHERE id = @official AND isOfficial = 1)
+		THROW 50000, 'official not exist', 1;
+
+	IF NOT EXISTS ( SELECT *
+					FROM Singer
+					WHERE id = @reserve AND isOfficial = 0)
+		THROW 50000, 'reserve not exist', 1;
+
+
+	UPDATE Interview 
+	SET score = @score
+	WHERE interviewer = @official AND interviewee = @reserve;
+
+	COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+	ROLLBACK TRANSACTION;
+	THROW;
+END CATCH;
+GO
+
