@@ -22,11 +22,11 @@ namespace SPV202_CS486_Team11
 
         static Connection()
         {
-            connectionString[0] = "Data Source=LAPTOP-HSGL6DT0\\SQLEXPRESS;Initial Catalog=CS486_Team11_DB;Integrated Security=True"; // Tuan
+            connectionString[0] = "Data Source=LAPTOP-HSGL6DT0\\SQLEXPRESS;Initial Catalog=CS486_team11_DB;Integrated Security=True"; // Tuan
             connectionString[1] = "Data Source=LAPTOP-SMBGUUTC\\SQLEXPRESS01;Initial Catalog=CS486_team11_DB;Integrated Security=True"; //Khoa
-            connectionString[2] = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;Initial Catalog=CS468_Team11_DB;Integrated Security=True"; // Tuong
-            connectionString[3] = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=CS486_Team11_DB;Integrated Security=True"; //Hung
-            connectionString[4] = "Data Source=DESKTOP-MUE9P6C\\SQLEXPRESS;Initial Catalog=CS486_Team11_DB;Integrated Security=True"; //Minh
+            connectionString[2] = "Data Source=DESKTOP-2VSJGTL\\SQLEXPRESS;Initial Catalog=CS486_team11_DB;Integrated Security=True"; // Tuong
+            connectionString[3] = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=CS486_team11_DB;Integrated Security=True"; //Hung
+            connectionString[4] = "Data Source=DESKTOP-MUE9P6C\\SQLEXPRESS;Initial Catalog=CS486_team11_DB;Integrated Security=True"; //Minh
             connectionString[5] = ""; //Trung
         }
     };
@@ -65,6 +65,7 @@ namespace SPV202_CS486_Team11
 
         public static DataSet getData(string q)
         {
+            if (q.Length == 0) return null;
             DataSet ds = null;
             using (SqlConnection conn = new SqlConnection(getConnectionString()))
             {
@@ -81,7 +82,6 @@ namespace SPV202_CS486_Team11
 
                 SqlDataAdapter dapt = new SqlDataAdapter(q, conn);
                 ds = new DataSet();
-
                 try { dapt.Fill(ds); }
                 catch (Exception e)
                 {

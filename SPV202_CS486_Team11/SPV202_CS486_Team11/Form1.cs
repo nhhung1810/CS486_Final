@@ -15,12 +15,13 @@ namespace SPV202_CS486_Team11
         public Form1()
         {
             InitializeComponent();
-            Misc.setConnection(Misc.connectBy.Tuan);
+            Misc.setConnection(Misc.connectBy.Hung);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormRuleMember form = new FormRuleMember();
+            form.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace SPV202_CS486_Team11
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            new LoginForm().ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -54,11 +55,6 @@ namespace SPV202_CS486_Team11
         }
 
         private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
