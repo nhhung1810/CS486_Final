@@ -36,7 +36,6 @@ namespace SPV202_CS486_Team11
             lbl.Width = this.Size.Width;
             flpRule.Controls.Add(lbl);
             //initRule();
-
             DataSet data = Misc.getData("select Singer.id, Singer.name from Singer where Singer.isOfficial == 1");//select Official
             if (data != null && data.Tables.Count > 0)
                 dgvOfficial.DataSource = data.Tables[0];
