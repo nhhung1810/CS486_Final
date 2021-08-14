@@ -96,13 +96,15 @@ namespace SPV202_CS486_Team11
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 673);
+            this.ControlBox = false;
             this.Controls.Add(this.lblOfficial);
             this.Controls.Add(this.lblNonOfficial);
             this.Controls.Add(this.dgvNonOfficial);
             this.Controls.Add(this.dgvOfficial);
             this.Controls.Add(this.flpRule);
+            this.Location = new System.Drawing.Point(100, 0);
             this.Name = "FormRuleMember";
-            this.Text = "FormRuleMember";
+            this.Text = "Introduction Rule And Member - Super Vocal";
             this.Load += new System.EventHandler(this.FormRuleMember_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfficial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNonOfficial)).EndInit();
