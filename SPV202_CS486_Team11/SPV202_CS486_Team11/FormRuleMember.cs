@@ -24,13 +24,17 @@ namespace SPV202_CS486_Team11
             flpRule.WrapContents = false;
             Button rule = new Button { Text = "Rule" };
             rule.Location = new Point(0, 0);
-            rule.Font = new Font("Georgie", 12, FontStyle.Bold);
+            rule.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+            rule.BackColor = Color.Green;
+            rule.ForeColor = Color.White;
+            rule.FlatStyle = FlatStyle.Flat;
             rule.Height = 40;
             rule.Width = 70;
             flpRule.Controls.Add(rule);
             
             Label lbl = new Label();
             lbl.Text = "The six Principal members each choose an Understudy member to sing a duet with. Both members need a Principal recommendation to become Principal members. In the event that more than three groups are chosen as Principals, one of the Principal groups is challenged for their spot in a solo battle.";
+            lbl.Font = new Font("Times New Roman", 12);
             lbl.Location = new Point(0, 0);
             lbl.Height = 600;
             lbl.Width = this.Size.Width;
@@ -108,9 +112,6 @@ namespace SPV202_CS486_Team11
             lbl.Location = new Point(0, 0);
             flpRule.Controls.Add(lbl);//about 
         }
-        /*public Button addRuleButton(Control control, string text, int x, int y)
-        {
-            control = new Button()
-        }*/
+        
     }
 }
