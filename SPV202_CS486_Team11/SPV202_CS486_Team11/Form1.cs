@@ -19,7 +19,8 @@ namespace SPV202_CS486_Team11
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            FormRuleMember form = new FormRuleMember();
+            form.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
