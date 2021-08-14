@@ -16,7 +16,7 @@ namespace SPV202_CS486_Team11
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Form1());
         }
     }
 }
