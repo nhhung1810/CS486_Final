@@ -29,7 +29,7 @@ namespace SPV202_CS486_Team11
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@reverse", SqlDbType.Int).Value = officialID;
             cmd.Parameters.AddWithValue("@official", SqlDbType.Int).Value = textID.Text;
-
+            cmd.Parameters.AddWithValue("@songID", SqlDbType.Int).Value = textSongID.Text;
 
             try
             {
