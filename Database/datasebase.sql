@@ -95,11 +95,10 @@ INSERT INTO Interview(Interviewer, Interviewee, Score) VALUES
 	('28', '12', '3'),
 	('28', '32', '9')
 
-use master
-go
-drop DATABASE CS486_team11_DB
+
 
 ---/////////////////////////////////////////////////////////////////////////
+GO
 
 CREATE OR ALTER PROCEDURE addInterview
 @official int,
@@ -290,3 +289,7 @@ GO
 SELECT * FROM Song
 
 EXEC addSong 12, Hello, 1
+
+use master
+go
+drop DATABASE CS486_team11_DB
