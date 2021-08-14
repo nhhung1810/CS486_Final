@@ -65,6 +65,7 @@ namespace SPV202_CS486_Team11
 
         public static DataSet getData(string q)
         {
+            if (q.Length == 0) return null;
             DataSet ds = null;
             using (SqlConnection conn = new SqlConnection(getConnectionString()))
             {
