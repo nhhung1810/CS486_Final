@@ -33,14 +33,14 @@ namespace SPV202_CS486_Team11
             lbl.Text = "The six Principal members each choose an Understudy member to sing a duet with. Both members need a Principal recommendation to become Principal members. In the event that more than three groups are chosen as Principals, one of the Principal groups is challenged for their spot in a solo battle.";
             lbl.Location = new Point(0, 0);
             lbl.Height = 600;
-            lbl.Width = 200;
+            lbl.Width = this.Size.Width;
             flpRule.Controls.Add(lbl);
             //initRule();
 
-            DataSet data = Misc.getData("");//select Official
+            DataSet data = Misc.getData("select Singer.id, Singer.name from official JOIN Singer on Singer.id = official.singerid where isOfficial == 1");//select Official
             if (data != null && data.Tables.Count > 0)
                 dgvOfficial.DataSource = data.Tables[0];
-            data = Misc.getData("");//Select NonOfficial
+            data = Misc.getData("select Singer.id, Singer.name from official JOIN Singer on Singer.id = official.singerid where isOfficial == 1");//Select NonOfficial
             if (data != null && data.Tables.Count > 0)
                 dgvNonOfficial.DataSource = data.Tables[0];
         }

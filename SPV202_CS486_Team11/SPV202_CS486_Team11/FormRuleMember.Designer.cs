@@ -29,20 +29,12 @@ namespace SPV202_CS486_Team11
         /// </summary>
         private void InitializeComponent()
         {
-            this.flpRule = new System.Windows.Forms.FlowLayoutPanel();
             this.dgvOfficial = new System.Windows.Forms.DataGridView();
             this.dgvNonOfficial = new System.Windows.Forms.DataGridView();
+            this.flpRule = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfficial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNonOfficial)).BeginInit();
             this.SuspendLayout();
-            // 
-            // flpRule
-            // 
-            this.flpRule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flpRule.Location = new System.Drawing.Point(0, 0);
-            this.flpRule.Name = "flpRule";
-            this.flpRule.Size = new System.Drawing.Size(1025, 259);
-            this.flpRule.TabIndex = 0;
             // 
             // dgvOfficial
             // 
@@ -66,6 +58,14 @@ namespace SPV202_CS486_Team11
             this.dgvNonOfficial.Size = new System.Drawing.Size(519, 285);
             this.dgvNonOfficial.TabIndex = 2;
             // 
+            // flpRule
+            // 
+            this.flpRule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flpRule.Location = new System.Drawing.Point(0, 0);
+            this.flpRule.Name = "flpRule";
+            this.flpRule.Size = new System.Drawing.Size(1025, 259);
+            this.flpRule.TabIndex = 0;
+            // 
             // FormRuleMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -84,9 +84,8 @@ namespace SPV202_CS486_Team11
         }
 
         #endregion
-
-        private System.Windows.Forms.FlowLayoutPanel flpRule;
         private System.Windows.Forms.DataGridView dgvOfficial;
         private System.Windows.Forms.DataGridView dgvNonOfficial;
+        private System.Windows.Forms.FlowLayoutPanel flpRule;
     }
 }
