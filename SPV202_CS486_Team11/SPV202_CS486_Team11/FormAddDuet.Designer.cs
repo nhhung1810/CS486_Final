@@ -90,6 +90,7 @@ namespace SPV202_CS486_Team11
             this.Controls.Add(this.buttonConfirm);
             this.Name = "FormAddDuet";
             this.Text = "Choose a person to duet with";
+            this.Load += new System.EventHandler(this.FormAddDuet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

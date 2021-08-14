@@ -70,6 +70,18 @@
     <Compile Include="FormAddInter_reverse.Designer.cs">
       <DependentUpon>FormAddInter_reverse.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddPerformTrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPerformTrio.Designer.cs">
+      <DependentUpon>FormAddPerformTrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrinciple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrinciple.Designer.cs">
+      <DependentUpon>FormPrinciple.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,14 +103,29 @@
     <EmbeddedResource Include="FormAddInter_reverse.resx">
       <DependentUpon>FormAddInter_reverse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAddPerformTrio.resx">
+      <DependentUpon>FormAddPerformTrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrinciple.resx">
+      <DependentUpon>FormPrinciple.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\FormReverse.resx">
+      <DependentUpon>FormReverse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\FormReverse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Properties\FormReverse.Designer.cs">
+      <DependentUpon>FormReverse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>

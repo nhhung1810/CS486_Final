@@ -11,27 +11,24 @@ using System.Data.SqlClient;
 
 namespace SPV202_CS486_Team11
 {
-
-    public partial class FormAddInter_Prin : Form
+    public partial class FormAddPerformTrio : Form
     {
-        string officialID = "";
-        public FormAddInter_Prin(string ID)
+        string singerID = "";
+        public FormAddPerformTrio(string ID)
         {
             InitializeComponent();
-            officialID = ID;
+            singerID = ID;
         }
 
-        private void buttonConfirm_Click(object sender, EventArgs e)
+        private void FormAddPerformTrio_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            Misc.getConnectionString();
             con.ConnectionString = Misc.getConnectionString();
 
-
-            SqlCommand cmd = new SqlCommand("addInterview", con);
+            SqlCommand cmd = new SqlCommand("addPerformance", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@official", SqlDbType.Int).Value = officialID;
-            cmd.Parameters.AddWithValue("@reverse", SqlDbType.Int).Value = textID.Text;
+            cmd.Parameters.AddWithValue("@singerID", SqlDbType.Int).Value = singerID;
+            cmd.Parameters.AddWithValue("@songID", SqlDbType.Int).Value = textSongID.Text;
 
             try
             {
@@ -44,6 +41,11 @@ namespace SPV202_CS486_Team11
                 MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
