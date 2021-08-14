@@ -24,7 +24,7 @@ namespace SPV202_CS486_Team11
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            DataSet data = Misc.getData("select official.isOfficial from official where singerid = "+id.Text);
+            DataSet data = Misc.getData("select isOfficial from Singer where Singer.id = " + id.Text);
             //Invalid account
             if (data == null || data.Tables.Count == 0 || data.Tables[0].Rows.Count == 0)
             {
