@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.confirmButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // id
             // 
-            this.textBox1.Location = new System.Drawing.Point(40, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(296, 20);
-            this.textBox1.TabIndex = 0;
+            this.id.Location = new System.Drawing.Point(40, 58);
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(296, 20);
+            this.id.TabIndex = 0;
+            this.id.TextChanged += new System.EventHandler(this.id_TextChanged);
             // 
             // label1
             // 
@@ -66,7 +67,7 @@
             this.ClientSize = new System.Drawing.Size(381, 167);
             this.Controls.Add(this.confirmButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.id);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
@@ -77,7 +78,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button confirmButton;
     }
