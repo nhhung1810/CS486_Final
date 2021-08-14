@@ -44,9 +44,6 @@ create table performance(
 )
 
 
-alter table Singers
-add isOfficial int, check (isOfficial=0 or isOfficial=1)
-go
 
 INSERT INTO Singers(id, Name, isOfficial) VALUES
 	('1', 'Aladin',  '0'),
@@ -95,9 +92,8 @@ INSERT INTO Interview(Interviewer, Interviewee, Score) VALUES
 	('28', '12', '3'),
 	('28', '32', '9')
 
-use master
 go
-drop DATABASE CS486_team11_DB
+
 
 ---/////////////////////////////////////////////////////////////////////////
 
@@ -290,3 +286,7 @@ GO
 SELECT * FROM Song
 
 EXEC addSong 12, Hello, 1
+
+use master
+go
+drop DATABASE CS486_team11_DB
