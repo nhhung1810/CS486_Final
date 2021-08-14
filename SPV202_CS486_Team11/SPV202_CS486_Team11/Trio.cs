@@ -14,10 +14,11 @@ namespace SPV202_CS486_Team11
     {
         private int width = 0;
         private int height = 0;
-        public Trio(string name, string author, bool official, bool sq, string view)
+        public Trio(string name, string songName)
         {
-
-
+            addControl(new Label { Text = name }, 0, 0, 100);
+            addControl(new Label { Text = songName }, 20, 0, 100);
+            addControl(new Button { Text = "Qualify" }, 20, 0, 50);
             Width = width;
             Height = 50;
         }
