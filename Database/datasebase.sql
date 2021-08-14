@@ -28,11 +28,6 @@ create table Interview(
     score int not null
 )
 
---
-create table official(
-    singerid int not null REFERENCES Singers(id),
-    isOfficial int CHECK(isOfficial in (1, 0))
-)
 
 go
 
@@ -63,3 +58,31 @@ INSERT INTO Song(id, name) VALUES
 	('9', 'Can,t Help Falling in Love'),
 	('10', 'To Roam About'),
 	('11', 'One Day of the Spring')
+INSERT INTO Performance(singerid, songid) VALUES
+	(19, 1),
+	(33, 1),
+	(7, 2),
+	(8, 2),
+	(4, 3),
+	(25, 3),
+	(13, 4),
+	(35,4)
+INSERT INTO Interview(Interviewer, Interviewee, Score) VALUES
+	('19', '33', '10'),
+	('19', '22', '4'),
+	('19', '15', '7'),
+	('7', '10', '6'),
+	('7', '3', '3'),
+	('7', '8', '10'),
+	('4', '32', '5'),
+	('4', '27', '3'),
+	('4', '25', '9'),
+	('13', '35', '10'),
+	('13', '29', '5'),
+	('13', '16', '5'),
+	('23', '9', '4'),
+	('23', '36', '10'),
+	('23', '20', '7'),
+	('28', '31', '6'),
+	('28', '12', '3'),
+	('28', '32', '9')
