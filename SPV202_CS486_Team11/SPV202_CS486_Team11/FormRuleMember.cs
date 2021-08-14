@@ -37,10 +37,10 @@ namespace SPV202_CS486_Team11
             flpRule.Controls.Add(lbl);
             //initRule();
 
-            DataSet data = Misc.getData("select Singer.id, Singer.name from official JOIN Singer on Singer.id = official.singerid where isOfficial == 1");//select Official
+            DataSet data = Misc.getData("select Singer.id, Singer.name from Singer where Singer.isOfficial == 1");//select Official
             if (data != null && data.Tables.Count > 0)
                 dgvOfficial.DataSource = data.Tables[0];
-            data = Misc.getData("select Singer.id, Singer.name from official JOIN Singer on Singer.id = official.singerid where isOfficial == 1");//Select NonOfficial
+            data = Misc.getData("select Singer.id, Singer.name from Singer where Singer.isOfficial == 0");//Select NonOfficial
             if (data != null && data.Tables.Count > 0)
                 dgvNonOfficial.DataSource = data.Tables[0];
         }
