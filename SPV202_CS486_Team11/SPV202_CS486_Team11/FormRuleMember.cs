@@ -22,6 +22,7 @@ namespace SPV202_CS486_Team11
         {
             flpRule.FlowDirection = FlowDirection.TopDown;
             flpRule.WrapContents = false;
+            flpRule.AutoScroll = true;
             Button rule = new Button { Text = "Rule" };
             rule.Location = new Point(0, 0);
             rule.Font = new Font("Century Gothic", 12, FontStyle.Bold);
@@ -33,12 +34,14 @@ namespace SPV202_CS486_Team11
             flpRule.Controls.Add(rule);
             
             Label lbl = new Label();
-            lbl.Text = "The six Principal members each choose an Understudy member to sing a duet with. Both members need a Principal recommendation to become Principal members. In the event that more than three groups are chosen as Principals, one of the Principal groups is challenged for their spot in a solo battle.";
+            lbl.Text = "*From episodes 1-7, the six best performances (solo, duets, or trios) are chosen after being judged by the three show producers, and are given the Principal recommendation.\n*Six other performances are chosen as Understudy recommendations, and attempt to defeat the Principal performances. \n*The ending Principal performances go on to be the Principal performances of the next week. \n*Starting in episode 8, the members divide into six groups of six members, led by members who have been Principal performers the most. \n*The final round culminates in six winners, that were able to go on to perform on Singer 2019, as a Challenger Singer. ";
             lbl.Font = new Font("Times New Roman", 12);
             lbl.Location = new Point(0, 0);
-            lbl.Height = 600;
+            lbl.Height = 250;
             lbl.Width = this.Size.Width;
             flpRule.Controls.Add(lbl);
+            flpRule.Height = rule.Height + lbl.Height - 100;
+            flpRule.Width = this.Size.Width;
             //initRule();
             return;
 
