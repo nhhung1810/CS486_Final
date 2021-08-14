@@ -24,14 +24,14 @@ namespace SPV202_CS486_Team11
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
-            DataSet data = Misc.getData("");
+            DataSet data = Misc.getData("select official.isOfficial from official where singerid = "+id.Text);
             //Invalid account
             if (data == null || data.Tables.Count == 0 || data.Tables[0].Rows.Count == 0)
             {
                 MessageBox.Show("Your member key is not valid");
                 return;
             }
-            if (true) GoToOfficial(id.Text);
+            if (data.Tables[0].Rows[0].ToString() == "1") GoToOfficial(id.Text);
             else GoToReverse(id.Text);
         }
 

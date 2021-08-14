@@ -34,7 +34,7 @@ namespace SPV202_CS486_Team11
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            new LoginForm().ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
