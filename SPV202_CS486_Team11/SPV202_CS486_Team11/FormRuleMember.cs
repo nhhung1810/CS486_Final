@@ -20,6 +20,7 @@ namespace SPV202_CS486_Team11
         FlowLayoutPanel flpTmp;
         private void FormRuleMember_Load(object sender, EventArgs e)
         {
+            this.ControlBox = true;
             flpRule.FlowDirection = FlowDirection.TopDown;
             flpRule.WrapContents = false;
             flpRule.AutoScroll = true;

@@ -52,6 +52,32 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAboutUs.Designer.cs">
+      <DependentUpon>FormAboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddDuet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddDuet.Designer.cs" />
+    <Compile Include="FormAddInter_Prin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddInter_Prin.Designer.cs" />
+    <Compile Include="FormAddInter_reverse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddInter_reverse.Designer.cs" />
+    <Compile Include="FormAddPerformTrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddPerformTrio.Designer.cs" />
+    <Compile Include="FormPrinciple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrinciple.Designer.cs" />
     <Compile Include="FormRuleMember.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +103,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAboutUs.resx">
+      <DependentUpon>FormAboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddDuet.resx" />
+    <EmbeddedResource Include="FormAddInter_Prin.resx" />
+    <EmbeddedResource Include="FormAddInter_reverse.resx" />
+    <EmbeddedResource Include="FormAddPerformTrio.resx" />
+    <EmbeddedResource Include="FormPrinciple.resx" />
     <EmbeddedResource Include="FormRuleMember.resx" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

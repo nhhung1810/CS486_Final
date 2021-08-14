@@ -31,18 +31,20 @@ namespace SPV202_CS486_Team11
                 MessageBox.Show("Your member key is not valid");
                 return;
             }
-            if (data.Tables[0].Rows[0].ToString() == "1") GoToOfficial(id.Text);
+            MessageBox.Show(data.Tables[0].Rows[0][0].ToString());
+            if (data.Tables[0].Rows[0][0].ToString() == "1") GoToOfficial(id.Text);
             else GoToReverse(id.Text);
         }
 
         private void GoToOfficial(string id)
         {
-
+            FormPrinciple nf = new FormPrinciple(id);
+            nf.ShowDialog();
         }
 
         private void GoToReverse(string id)
         {
-
+            new FormAddPerformTrio(id).ShowDialog();
         }
 
         private void id_TextChanged(object sender, EventArgs e)
