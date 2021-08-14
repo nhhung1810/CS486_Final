@@ -36,10 +36,6 @@ create table performance(
     songid int not null REFERENCES song(id)
 )
 
-create table qualify(
-	singerid int not null REFERENCES Singers(id)
-)
-
 
 alter table Singers
 add isOfficial int, check (isOfficial=0 or isOfficial=1)
@@ -92,12 +88,9 @@ INSERT INTO Performance(singerid, songid) VALUES
 -- 	('28', '12', '3'),
 -- 	('28', '32', '9')
 
-go
-Select STRING_AGG(s.name, ',') as singers, Song.name as Song_name from Performance as p
-join singers as s on s.id = p.singerid
-join Song on Song.id = p.songid
-GROUP by p.songid
+GO
 
+Select * from Performance 
 
 go
 use master
