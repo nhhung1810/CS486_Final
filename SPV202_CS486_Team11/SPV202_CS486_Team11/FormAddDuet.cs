@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace SPV202_CS486_Team11
 {
-
-    public partial class FormAddInter_Prin : Form
+    public partial class FormAddDuet : Form
     {
         string officialID = "";
-        public FormAddInter_Prin()
+        public FormAddDuet()
         {
             InitializeComponent();
         }
@@ -23,14 +23,13 @@ namespace SPV202_CS486_Team11
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            Misc.getConnectionString();
             con.ConnectionString = Misc.getConnectionString();
 
-
-            SqlCommand cmd = new SqlCommand("addInterview", con);
+            SqlCommand cmd = new SqlCommand("addDuet", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@official", SqlDbType.Int).Value = officialID;
-            cmd.Parameters.AddWithValue("@reverse", SqlDbType.Int).Value = textID.Text;
+            cmd.Parameters.AddWithValue("@reverse", SqlDbType.Int).Value = officialID;
+            cmd.Parameters.AddWithValue("@official", SqlDbType.Int).Value = textID.Text;
+
 
             try
             {

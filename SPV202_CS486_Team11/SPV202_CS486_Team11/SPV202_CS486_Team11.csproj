@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAddDuet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddDuet.Designer.cs">
+      <DependentUpon>FormAddDuet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAddInter_Prin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddDuet.resx">
+      <DependentUpon>FormAddDuet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAddInter_Prin.resx">
       <DependentUpon>FormAddInter_Prin.cs</DependentUpon>
