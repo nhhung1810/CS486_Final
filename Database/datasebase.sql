@@ -95,9 +95,9 @@ INSERT INTO Interview(Interviewer, Interviewee, Score) VALUES
 	('28', '12', '3'),
 	('28', '32', '9')
 
---use master
---go
---drop DATABASE CS486_team11_DB
+use master
+go
+drop DATABASE CS486_team11_DB
 
 ---/////////////////////////////////////////////////////////////////////////
 
@@ -113,12 +113,12 @@ BEGIN TRY
 	--ELSE THROW
 
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @official AND isOfficial = 1)
 		THROW 50000, 'official not exist', 1;
 
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @reserve AND isOfficial = 0)
 		THROW 50000, 'reserve not exist', 1;
 
@@ -155,12 +155,12 @@ BEGIN TRY
 	--IF LEGIT INSERT
 	--ELSE THROW
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @official AND isOfficial = 1)
 		THROW 50000, 'official not exist', 1;
 
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @reserve AND isOfficial = 0)
 		THROW 50000, 'reserve not exist', 1;
 
@@ -204,12 +204,12 @@ BEGIN TRY
 	--ELSE THROW
 
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @official AND isOfficial = 1)
 		THROW 50000, 'official not exist', 1;
 
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @reserve AND isOfficial = 0)
 		THROW 50000, 'reserve not exist', 1;
 
@@ -236,7 +236,7 @@ BEGIN TRY
 	--IF LEGIT INSERT
 	--ELSE THROW
 	IF NOT EXISTS ( SELECT *
-					FROM Singer
+					FROM Singers
 					WHERE id = @singerid )
 		THROW 50000, 'singer not exist', 1;
 
@@ -255,3 +255,38 @@ BEGIN CATCH
 	THROW;
 END CATCH;
 GO
+
+CREATE OR ALTER PROCEDURE addSong
+@id int,
+@name NVARCHAR(100),
+@number int
+
+AS
+BEGIN TRANSACTION
+BEGIN TRY
+	--IF LEGIT INSERT
+	--ELSE THROW
+	IF EXISTS ( SELECT *
+					FROM Song
+					WHERE id = @id )
+		THROW 50000, 'song id already exist', 1;
+
+	IF EXISTS ( SELECT *
+					FROM Song
+					WHERE name = @name)
+		THROW 50000, 'song name already exist', 1;
+
+	INSERT INTO Song (id, name, number) 
+			VALUES	(@id, @name, @number);
+
+	COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+	ROLLBACK TRANSACTION;
+	THROW;
+END CATCH;
+GO
+
+SELECT * FROM Song
+
+EXEC addSong 12, Hello, 1
