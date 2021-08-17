@@ -35,7 +35,14 @@ namespace SPV202_CS486_Team11
             flpRule.Controls.Add(rule);
             
             Label lbl = new Label();
-            lbl.Text = "*From episodes 1-7, the six best performances (solo, duets, or trios) are chosen after being judged by the three show producers, and are given the Principal recommendation.\n*Six other performances are chosen as Understudy recommendations, and attempt to defeat the Principal performances. \n*The ending Principal performances go on to be the Principal performances of the next week. \n*Starting in episode 8, the members divide into six groups of six members, led by members who have been Principal performers the most. \n*The final round culminates in six winners, that were able to go on to perform on Singer 2019, as a Challenger Singer. ";
+            lbl.Text = "*From episodes 1-7, the six best performances (solo, duets, or trios) " +
+                "are chosen after being judged by the three show producers, and are given the " +
+                "Principal recommendation.\n*Six other performances are chosen as Understudy " +
+                "recommendations, and attempt to defeat the Principal performances. \n*The ending " +
+                "Principal performances go on to be the Principal performances of the next " +
+                "week. \n*Starting in episode 8, the members divide into six groups of six members, " +
+                "led by members who have been Principal performers the most. \n*The final round culminates " +
+                "in six winners, that were able to go on to perform on Singer 2019, as a Challenger Singer. ";
             lbl.Font = new Font("Times New Roman", 12);
             lbl.Location = new Point(0, 0);
             lbl.Height = 200;
